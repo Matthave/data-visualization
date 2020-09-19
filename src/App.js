@@ -1,6 +1,6 @@
 import React from "react";
-import Navigation from "./components/Navigation/NaviagtionView";
-import Header from "./components/Header/Header";
+import Navigation from "./containers/Navigation/Navigation";
+import Header from "./containers/Header/Header";
 import Main from "./containers/Main/Main";
 import "./css/style.css";
 

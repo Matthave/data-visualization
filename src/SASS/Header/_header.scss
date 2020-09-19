@@ -3,12 +3,17 @@
   flex-wrap: wrap;
   align-items: center;
   position: relative;
-  top: 75px;
-  min-height: 80vh;
+  min-height: 100vh;
   background-color: #111;
   padding: 0 15px;
   color: #eee;
+  transition: $transitionHeaderText 0.75s;
+  overflow: hidden;
   z-index: -1;
+
+  &--height {
+    min-height: calc(95vh - 65px);
+  }
 
   @include mq(large) {
     padding: 0 50px;
@@ -17,8 +22,18 @@
   &__title {
     width: 100%;
     text-align: center;
+    margin-top: 50px;
     font-size: 45px;
     font-family: "Kufam", cursive;
+    transition: $transitionNavAndHeaderEle, opacity $transitionHeaderText 1.2s;
+    transform: rotate(90deg);
+    transform-origin: left;
+    opacity: 0;
+
+    &--onPosition {
+      transform: rotate(0deg);
+      opacity: 1;
+    }
 
     @include mq(large) {
       font-size: 100px;
@@ -28,9 +43,35 @@
 
   &__text {
     width: 100%;
-    text-align: center;
+    transform: translateY(300px);
     margin-bottom: 15px;
     font-family: "Kufam", cursive;
+    opacity: 1;
+    transition: $transitionHeaderText;
+
+    &--onPostion {
+      transform: translateY(0);
+    }
+
+    &--hideIt {
+      opacity: 0;
+    }
+
+    &:nth-child(1) {
+      transition: $transitionHeaderText 0.4s, opacity $transitionHeaderText 3s;
+    }
+    &:nth-child(2) {
+      transition: $transitionHeaderText 0.8s, opacity $transitionHeaderText 3.2s;
+    }
+    &:nth-child(3) {
+      transition: $transitionHeaderText 1.2s, opacity $transitionHeaderText 3.4s;
+    }
+    &:nth-child(4) {
+      transition: $transitionHeaderText 1.6s;
+    }
+    &:nth-child(5) {
+      transition: $transitionHeaderText 2s;
+    }
 
     @include mq(large) {
       text-align: right;
@@ -42,4 +83,12 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.header__titleWrap {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
 }

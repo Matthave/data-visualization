@@ -4,13 +4,30 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 75px;
-  background-color: #111;
-  box-shadow: 0 0 5px 2px #000;
+  height: 65px;
+  background-color: rgba(17, 17, 17, 0.9);
+  transition: $transitionNavAndHeaderEle;
+  z-index: 5;
+
+  &--onPosition {
+    box-shadow: 0 0 5px 1px #000;
+  }
+
+  &__ul {
+    overflow: hidden;
+  }
 
   &__list {
     list-style: none;
-    color: #eee;
+    transform: rotate(90deg);
+    transform-origin: left;
+    opacity: 0;
+    transition: $transitionNavAndHeaderEle, opacity $transitionHeaderText 1.2s;
+
+    &--onPosition {
+      transform: rotate(0deg);
+      opacity: 1;
+    }
   }
 
   &__link {
