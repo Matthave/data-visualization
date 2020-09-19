@@ -1,0 +1,43 @@
+.svg__rect {
+  fill: rgba(17, 17, 17, 0.85);
+  transition: 0.2s linear;
+  cursor: pointer;
+
+  &:hover {
+    fill: rgba(243, 123, 123, 0.85);
+  }
+}
+
+text {
+  font-size: 12px;
+}
+
+.svg__title {
+  font-size: 35px;
+  fill: #eee;
+
+  @include mq(large) {
+    font-size: 150px;
+  }
+}
+
+.tick text {
+  fill: #111;
+}
+
+g.svg__xAxis .tick text {
+  transform: rotate(25deg);
+  font-size: 10px;
+
+  @include mq(medium) {
+    font-size: 17px;
+  }
+}
+
+.tick line {
+  stroke: rgba(243, 123, 123, 0.3);
+}
+
+// .svg__lineChart {
+//   fill: rgba(17, 17, 17, 0.5);
+// }

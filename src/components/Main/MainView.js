@@ -1,7 +1,8 @@
 import React from "react";
+import Chart from "../../containers/Chart/Chart";
 import PropTypes from "prop-types";
 
-function MainView({ chartStageNumber }) {
+function MainView({ chartStageNumber, dataTop10, dataHistorical }) {
   return (
     <main className="main">
       <section className="main__chartSection scrollSection introSection">
@@ -15,6 +16,7 @@ function MainView({ chartStageNumber }) {
       <section className="main__chartSection scrollSection">
         <h1 className="main__title">
           {chartStageNumber < 2 ? 2 : chartStageNumber}
+          <Chart dataTop10={dataTop10} />
         </h1>
       </section>
       <section className="scrollSection"></section>
@@ -33,6 +35,7 @@ function MainView({ chartStageNumber }) {
 
 MainView.propTypes = {
   chartStageNumber: PropTypes.number,
+  dataTop10: PropTypes.array,
 };
 
 export default MainView;

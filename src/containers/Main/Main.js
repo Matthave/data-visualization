@@ -10,12 +10,13 @@ export class Main extends Component {
       this.isScrolledIntoView
     );
     this.currentIndexOfSection = Math.max(this.currentIndexOfSection, 0);
-  }
 
-  state = {
-    scrollPause: false,
-    chartStageNumber: 0,
-  };
+    this.state = {
+      scrollPause: false,
+      chartStageNumber: 0,
+      data: [],
+    };
+  }
 
   componentDidMount() {
     window.scrollTo({ top: 0, behavior: "auto" });
@@ -25,6 +26,11 @@ export class Main extends Component {
     this.setState({
       chartStageNumber: this.currentIndexOfSection,
     });
+
+    fetch("https://corona.lmao.ninja/v2/countries")
+      .then((res) => res.json())
+      .then((data) => this.setState({ data }))
+      .catch((err) => console.log(err));
   }
 
   componentWillUnmount() {
@@ -58,7 +64,6 @@ export class Main extends Component {
       if (isLastSection) return this.scrollToLastElement(direction);
     }
 
-    console.log(this.currentIndexOfSection);
     this.currentIndexOfSection += direction;
     this.scrollToElement();
   };
@@ -108,9 +113,17 @@ export class Main extends Component {
     const isVisible = elemTop >= 0 && elemBottom <= window.innerHeight;
     return isVisible;
   }
+
   render() {
-    const { chartStageNumber } = this.state;
-    return <MainView chartStageNumber={chartStageNumber} />;
+    const { chartStageNumber, data } = this.state;
+    data.sort(function (a, b) {
+      return b.cases - a.cases;
+    });
+    const dataTop10 = data.slice(0, 15);
+
+    return (
+      <MainView chartStageNumber={chartStageNumber} dataTop10={dataTop10} />
+    );
   }
 }
 
