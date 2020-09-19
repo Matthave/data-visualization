@@ -12,6 +12,12 @@ export class Main extends Component {
     );
     this.currentIndexOfSection = Math.max(this.currentIndexOfSection, 0);
 
+    this.initialY = null;
+    this.initialX = null;
+
+    this.startTouch = this.startTouch.bind(this);
+    this.moveTouch = this.moveTouch.bind(this);
+
     this.state = {
       scrollPause: false,
       chartStageNumber: 0,
@@ -22,6 +28,11 @@ export class Main extends Component {
   componentDidMount() {
     window.scrollTo({ top: 0, behavior: "auto" });
     document.addEventListener("wheel", (e) => this.scrollDirection(e));
+    document.addEventListener("touchstart", this.startTouch, false);
+    document.addEventListener("touchmove", this.moveTouch, false);
+
+    document.addEventListener("swipeUp", () => this.whichSectionNow(1));
+    document.addEventListener("swipeDown", () => this.whichSectionNow(-1));
     this.sectionElements = document.querySelectorAll(".scrollSection");
 
     this.setState({
@@ -36,6 +47,37 @@ export class Main extends Component {
 
   componentWillUnmount() {
     document.removeEventListener("wheel", (e) => this.scrollDirection(e));
+  }
+
+  startTouch(event) {
+    this.initialX = event.touches[0].clientX;
+    this.initialY = event.touches[0].clientY;
+  }
+
+  moveTouch(event) {
+    if (!this.initialX || !this.initialY) return;
+    const currentX = event.touches[0].clientX;
+    const currentY = event.touches[0].clientY;
+
+    const diffX = this.initialX - currentX;
+    const diffY = this.initialY - currentY;
+
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+      if (diffX > 0) {
+        document.dispatchEvent(new Event("swipeLeft"));
+      } else {
+        document.dispatchEvent(new Event("swipeRight"));
+      }
+    } else {
+      if (diffY > 0) {
+        document.dispatchEvent(new Event("swipeUp"));
+      } else {
+        document.dispatchEvent(new Event("swipeDown"));
+      }
+    }
+
+    this.initialX = null;
+    this.initialY = null;
   }
 
   scrollDirection = (e) => {
