@@ -5,7 +5,7 @@ function ChartView() {
     <svg
       className="chart__svg"
       width={`${window.innerWidth}`}
-      height="600"
+      height="700"
     ></svg>
   );
 }

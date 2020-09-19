@@ -15,7 +15,6 @@ function MainView({ chartStageNumber, dataTop10, dataHistorical }) {
       </section>
       <section className="main__chartSection scrollSection">
         <h1 className="main__title">
-          {chartStageNumber < 2 ? 2 : chartStageNumber}
           <Chart dataTop10={dataTop10} />
         </h1>
       </section>
@@ -26,8 +25,10 @@ function MainView({ chartStageNumber, dataTop10, dataHistorical }) {
       <section className="scrollSection"></section>
       <section className="scrollSection"></section>
       <section className="scrollSection"></section>
+      <section className="scrollSection"></section>
+      <section className="scrollSection"></section>
       <section className="scrollSection lastSection">
-        <h1 className="main__title">eloszka</h1>
+        <h1 className="main__title">ANY TEXT HERE</h1>
       </section>
     </main>
   );

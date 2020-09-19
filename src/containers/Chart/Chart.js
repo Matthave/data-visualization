@@ -24,10 +24,10 @@ export class Chart extends Component {
     const containerWidth = container.attr("width");
     const containerHeight = +container.attr("height");
     const margin = {
-      top: 20,
+      top: 85,
       right: 20,
-      bottom: 75,
-      left: 85,
+      bottom: 25,
+      left: 95,
     };
 
     //Margin settings
@@ -80,7 +80,8 @@ export class Chart extends Component {
       .attr("class", "svg__rect")
       .attr("y", (d) => yScale(d.country))
       .attr("width", (d) => xScale(d.cases))
-      .attr("height", yScale.bandwidth());
+      .attr("height", yScale.bandwidth())
+      .attr("id", (d) => d.countryInfo._id);
   };
 
   render() {

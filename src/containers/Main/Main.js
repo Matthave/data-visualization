@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MainView from "../../components/Main/MainView";
+import { rectVisibilityFunc } from "../../utils";
 
 export class Main extends Component {
   constructor(props) {
@@ -80,28 +81,29 @@ export class Main extends Component {
       });
     }
 
+    rectVisibilityFunc(this.currentIndexOfSection);
     this.setState({
       chartStageNumber: this.currentIndexOfSection,
     });
   };
 
   scrollToLastElement = (direction) => {
-    if (this.currentIndexOfSection === 10 && direction === 1) {
+    if (this.currentIndexOfSection === 12 && direction === 1) {
       this.sectionElements[10].scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
     }
 
-    if (this.currentIndexOfSection === 10 && direction === -1) {
+    if (this.currentIndexOfSection === 12 && direction === -1) {
       this.sectionElements[2].scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
 
-      this.currentIndexOfSection = 9;
+      this.currentIndexOfSection = 11;
       this.setState({
-        chartStageNumber: 9,
+        chartStageNumber: 11,
       });
     }
   };
@@ -119,8 +121,10 @@ export class Main extends Component {
     data.sort(function (a, b) {
       return b.cases - a.cases;
     });
-    const dataTop10 = data.slice(0, 15);
-
+    const dataTop10 = data.slice(0, 12);
+    dataTop10.forEach((ele, index) => {
+      ele.countryInfo._id = index;
+    });
     return (
       <MainView chartStageNumber={chartStageNumber} dataTop10={dataTop10} />
     );

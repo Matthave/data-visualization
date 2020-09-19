@@ -1,10 +1,14 @@
 .svg__rect {
   fill: rgba(17, 17, 17, 0.85);
-  transition: 0.2s linear;
+  transition: 0.2s linear, opacity 0.5s linear 0.3s;
   cursor: pointer;
+  color: #fff;
+  opacity: 0;
+  stroke-width: 1;
+  stroke: #fff;
 
   &:hover {
-    fill: rgba(243, 123, 123, 0.85);
+    stroke: #111;
   }
 }
 
