@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/data-visualization/static/css/main.78d70002.chunk.css",
-    "main.js": "/data-visualization/static/js/main.1cee349c.chunk.js",
-    "main.js.map": "/data-visualization/static/js/main.1cee349c.chunk.js.map",
+    "main.css": "/data-visualization/static/css/main.d918beab.chunk.css",
+    "main.js": "/data-visualization/static/js/main.1dc7c7de.chunk.js",
+    "main.js.map": "/data-visualization/static/js/main.1dc7c7de.chunk.js.map",
     "runtime-main.js": "/data-visualization/static/js/runtime-main.995b3bd7.js",
     "runtime-main.js.map": "/data-visualization/static/js/runtime-main.995b3bd7.js.map",
-    "static/js/2.a7e71f09.chunk.js": "/data-visualization/static/js/2.a7e71f09.chunk.js",
-    "static/js/2.a7e71f09.chunk.js.map": "/data-visualization/static/js/2.a7e71f09.chunk.js.map",
+    "static/js/2.4341411e.chunk.js": "/data-visualization/static/js/2.4341411e.chunk.js",
+    "static/js/2.4341411e.chunk.js.map": "/data-visualization/static/js/2.4341411e.chunk.js.map",
     "index.html": "/data-visualization/index.html",
-    "precache-manifest.ec4cd7d3be25c7f5cc7049624c52cbc8.js": "/data-visualization/precache-manifest.ec4cd7d3be25c7f5cc7049624c52cbc8.js",
+    "precache-manifest.9502b6c3ad84afb9af3bad1f427c3f5d.js": "/data-visualization/precache-manifest.9502b6c3ad84afb9af3bad1f427c3f5d.js",
     "service-worker.js": "/data-visualization/service-worker.js",
-    "static/css/main.78d70002.chunk.css.map": "/data-visualization/static/css/main.78d70002.chunk.css.map",
-    "static/js/2.a7e71f09.chunk.js.LICENSE.txt": "/data-visualization/static/js/2.a7e71f09.chunk.js.LICENSE.txt",
-    "static/media/logo.png": "/data-visualization/static/media/logo.d7d06777.png"
+    "static/css/main.d918beab.chunk.css.map": "/data-visualization/static/css/main.d918beab.chunk.css.map",
+    "static/js/2.4341411e.chunk.js.LICENSE.txt": "/data-visualization/static/js/2.4341411e.chunk.js.LICENSE.txt",
+    "static/media/logo.png": "/data-visualization/static/media/logo.d7d06777.png",
+    "static/media/medical-mask.svg": "/data-visualization/static/media/medical-mask.5ec44caf.svg",
+    "static/media/social-distancing.svg": "/data-visualization/static/media/social-distancing.cd5e7d03.svg",
+    "static/media/water-tap.svg": "/data-visualization/static/media/water-tap.064467dc.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.995b3bd7.js",
-    "static/js/2.a7e71f09.chunk.js",
-    "static/css/main.78d70002.chunk.css",
-    "static/js/main.1cee349c.chunk.js"
+    "static/js/2.4341411e.chunk.js",
+    "static/css/main.d918beab.chunk.css",
+    "static/js/main.1dc7c7de.chunk.js"
   ]
 }
