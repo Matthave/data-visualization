@@ -50,6 +50,7 @@ export class Main extends Component {
   }
 
   startTouch(event) {
+    event.preventDefault();
     this.initialX = event.touches[0].clientX;
     this.initialY = event.touches[0].clientY;
   }
@@ -118,7 +119,10 @@ export class Main extends Component {
       this.currentIndexOfSection === 14
     ) {
       const fixedSectionEle = document.querySelectorAll(".fixedSection");
-      if (this.currentIndexOfSection == 0 || this.currentIndexOfSection === 1) {
+      if (
+        this.currentIndexOfSection === 0 ||
+        this.currentIndexOfSection === 1
+      ) {
         fixedSectionEle.forEach((ele) => (ele.style.display = "none"));
       } else {
         fixedSectionEle.forEach((ele) => (ele.style.display = "initial"));

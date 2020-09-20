@@ -8,6 +8,7 @@
 
 body {
   overflow: hidden;
+  min-width: 320px;
 }
 
 ::-webkit-scrollbar {
@@ -99,7 +100,7 @@ body {
   position: relative;
   min-height: 100vh;
   background-color: #111;
-  padding: 0 15px;
+  padding: 15px 15px;
   color: #eee;
   -webkit-transition: 0.6s linear 0.75s;
   transition: 0.6s linear 0.75s;
@@ -234,6 +235,11 @@ body {
   font-size: 100px;
 }
 
+.main__chartSection {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .main__chartSection,
 .introSection {
   position: relative;
@@ -323,33 +329,6 @@ body {
   background-color: rgba(0, 0, 0, 0.75);
 }
 
-.lastSection {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 100%;
-  height: 100vh;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.main__lastSecTitle {
-  width: 100%;
-  text-align: center;
-  font-size: 60px;
-  text-transform: uppercase;
-}
-
-.main__lastSecSub {
-  width: 50%;
-  text-align: center;
-  font-size: 20px;
-}
-
 .svg__rect {
   fill: rgba(17, 17, 17, 0.85);
   -webkit-transition: 0.2s linear, opacity 0.5s linear 0.3s, -webkit-transform 0.5s linear 0.3s;
@@ -424,7 +403,7 @@ g.svg__xAxis .tick text {
   transition: 0.5s linear;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 800px) {
   .fixedSection {
     left: 75%;
   }
@@ -476,5 +455,106 @@ g.svg__xAxis .tick text {
   padding: 1px 5px;
   background-color: #e75e2c;
   color: #eee;
+}
+
+.lastSection {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  min-height: 100vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 60px 0 15px;
+}
+
+.main__lastSecTitle {
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .main__lastSecTitle {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main__lastSecTitle {
+    font-size: 100px;
+  }
+}
+
+.main__lastSecSub {
+  width: 90%;
+  max-width: 400px;
+  text-align: justify;
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+.main__iconWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+@media (min-width: 460px) {
+  .main__iconWrap {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.main__advice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 300px;
+  width: 33%;
+  margin: 5px auto;
+}
+
+.main__icon {
+  width: 130px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .main__icon {
+    width: 160px;
+  }
+}
+
+.main__iconTitle {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+@media (min-width: 1024px) {
+  .main__iconTitle {
+    font-size: 22px;
+    margin: 25px 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -32,13 +32,11 @@ function HeaderView({ textEleOnPosition, headerEleOnPosition }) {
       </div>
 
       <div className="header__textWrap">
-        <p className={textHide}>
-          Maintain at least 1 meter distance between yourself and others
-        </p>
-        <p className={textHide}>Regularly and thoroughly clean your hands</p>
-        <p className={textHide}>Avoid going to crowded places</p>
-        <p className={textOnPosition}>Get some information about COVID-19</p>
-        <p className={textOnPosition}>Take a look on data visualization</p>
+        <p className={textHide}>Stay Home</p>
+        <p className={textHide}>Wash Your Hands</p>
+        <p className={textHide}>Avoid The Crowds</p>
+        <p className={textOnPosition}>Keep The Distance</p>
+        <p className={textOnPosition}>Take Care of Your Health</p>
       </div>
     </header>
   );

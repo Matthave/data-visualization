@@ -73,8 +73,7 @@ export class Chart extends Component {
     xAxisG.select(".domain").remove();
 
     //Main group g
-    const bar = g
-      .selectAll("rect")
+    g.selectAll("rect")
       .data(dataMost)
       .enter()
       .append("rect")
