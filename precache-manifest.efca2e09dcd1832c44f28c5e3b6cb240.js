@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c70f2351ab7dcf19e2f29d88ff8792f3",
+    "revision": "8faa64ca843282b0341fb9214f22d05a",
     "url": "/data-visualization/index.html"
   },
   {
-    "revision": "8b5d8c47e9f2c82b33d8",
-    "url": "/data-visualization/static/css/main.d918beab.chunk.css"
+    "revision": "0269a8874174d9441b2f",
+    "url": "/data-visualization/static/css/main.eccf80b4.chunk.css"
   },
   {
     "revision": "a2cbea13b5cbccdcb100",
@@ -16,12 +16,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/data-visualization/static/js/2.4341411e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8b5d8c47e9f2c82b33d8",
-    "url": "/data-visualization/static/js/main.1dc7c7de.chunk.js"
+    "revision": "0269a8874174d9441b2f",
+    "url": "/data-visualization/static/js/main.78c03465.chunk.js"
   },
   {
     "revision": "d9bfbf726e3b5bfcbe70",
     "url": "/data-visualization/static/js/runtime-main.995b3bd7.js"
+  },
+  {
+    "revision": "cd5e7d03c84de4e64ab5f31ae30886d4",
+    "url": "/data-visualization/static/media/distance.cd5e7d03.svg"
   },
   {
     "revision": "d7d067771b01cdd88d0bc7125359e787",
@@ -29,14 +33,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "5ec44caf5a8a77ab490c0e78fe23e01d",
-    "url": "/data-visualization/static/media/medical-mask.5ec44caf.svg"
-  },
-  {
-    "revision": "cd5e7d03c84de4e64ab5f31ae30886d4",
-    "url": "/data-visualization/static/media/social-distancing.cd5e7d03.svg"
+    "url": "/data-visualization/static/media/mask.5ec44caf.svg"
   },
   {
     "revision": "064467dccbccf0ef2d41ade39e183be3",
-    "url": "/data-visualization/static/media/water-tap.064467dc.svg"
+    "url": "/data-visualization/static/media/water.064467dc.svg"
   }
 ]);
