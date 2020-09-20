@@ -28,8 +28,6 @@ export const rectVisibilityHellOfIfs = (currentIndexOfSection) => {
   const topActive = "50%";
   const topUnactive = "80%";
 
-  console.log(currentIndexOfSection);
-
   if (currentIndexOfSection === 2) {
     fixedSec0.style.top = topActive;
     fixedSec0.style.opacity = 1;

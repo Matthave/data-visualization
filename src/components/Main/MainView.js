@@ -29,9 +29,11 @@ function MainView({ dataMost, dataHistorical }) {
       <section className="scrollSection"></section>
       <section className="scrollSection"></section>
       <section className="scrollSection"></section>
+      <section className="scrollSection"></section>
       <section className="scrollSection lastSection">
         <MainLastSection />
       </section>
+      <section className="scrollSection"></section>
       <MainFixedSection dataMost={dataMost} />
     </main>
   );

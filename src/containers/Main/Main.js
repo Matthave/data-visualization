@@ -101,21 +101,21 @@ export class Main extends Component {
       this.currentIndexOfSection === this.sectionElements.length - 1;
     const isFirstSection = this.currentIndexOfSection === 0;
     if (direction === 1) {
-      if (isLastSection) return this.scrollToLastElement(direction);
+      if (isLastSection) return;
     } else if (direction === -1) {
       if (isFirstSection) return;
-      if (isLastSection) return this.scrollToLastElement(direction);
     }
 
     this.currentIndexOfSection += direction;
-    this.scrollToElement();
+    this.scrollToElement(direction);
   };
 
-  scrollToElement = () => {
+  scrollToElement = (direction) => {
     if (
       this.currentIndexOfSection === 0 ||
       this.currentIndexOfSection === 1 ||
-      this.currentIndexOfSection === 2
+      this.currentIndexOfSection === 2 ||
+      this.currentIndexOfSection === 14
     ) {
       const fixedSectionEle = document.querySelectorAll(".fixedSection");
       if (this.currentIndexOfSection == 0 || this.currentIndexOfSection === 1) {
@@ -126,7 +126,12 @@ export class Main extends Component {
 
       this.sectionElements[this.currentIndexOfSection].scrollIntoView({
         behavior: "smooth",
-        block: "start",
+      });
+    }
+
+    if (this.currentIndexOfSection === 13 && direction === -1) {
+      this.sectionElements[2].scrollIntoView({
+        behavior: "smooth",
       });
     }
 
@@ -134,27 +139,6 @@ export class Main extends Component {
     this.setState({
       chartStageNumber: this.currentIndexOfSection,
     });
-  };
-
-  scrollToLastElement = (direction) => {
-    if (this.currentIndexOfSection === 12 && direction === 1) {
-      this.sectionElements[10].scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-
-    if (this.currentIndexOfSection === 12 && direction === -1) {
-      this.sectionElements[2].scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-
-      this.currentIndexOfSection = 11;
-      this.setState({
-        chartStageNumber: 11,
-      });
-    }
   };
 
   isScrolledIntoView(e) {
