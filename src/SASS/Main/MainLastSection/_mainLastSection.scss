@@ -53,10 +53,35 @@
 .main__icon {
   width: 130px;
   margin: 0 auto;
+  opacity: 0;
 
   @include mq(large) {
     width: 160px;
   }
+}
+
+#icon1 {
+  transition: 0.6s 0.4s linear;
+}
+
+#icon2 {
+  transition: 0.6s 0.8s linear;
+}
+
+#icon3 {
+  transition: 0.6s 1.2s linear;
+}
+
+#iconTitle1 {
+  transition: 0.5s 1.2s linear;
+}
+
+#iconTitle2 {
+  transition: 0.5s 1.6s linear;
+}
+
+#iconTitle3 {
+  transition: 0.5s 2s linear;
 }
 
 .main__iconTitle {
@@ -64,6 +89,7 @@
   text-align: center;
   font-size: 18px;
   margin: 10px 0;
+  opacity: 0;
 
   @include mq(large) {
     font-size: 22px;
