@@ -324,10 +324,31 @@ body {
   background-color: rgba(0, 0, 0, 0.75);
 }
 
+.main__lastSecTitle {
+  width: 100%;
+  text-align: center;
+  font-size: 100px;
+  text-transform: uppercase;
+}
+
+.main__lastSecSub {
+  width: 50%;
+  text-align: justify;
+  word-break: break-all;
+  font-size: 20px;
+  padding-top: 65px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
 .svg__rect {
   fill: rgba(17, 17, 17, 0.85);
-  -webkit-transition: 0.2s linear, opacity 0.5s linear 0.3s;
-  transition: 0.2s linear, opacity 0.5s linear 0.3s;
+  -webkit-transition: 0.2s linear, opacity 0.5s linear 0.3s, -webkit-transform 0.5s linear 0.3s;
+  transition: 0.2s linear, opacity 0.5s linear 0.3s, -webkit-transform 0.5s linear 0.3s;
+  transition: 0.2s linear, opacity 0.5s linear 0.3s, transform 0.5s linear 0.3s;
+  transition: 0.2s linear, opacity 0.5s linear 0.3s, transform 0.5s linear 0.3s, -webkit-transform 0.5s linear 0.3s;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
   cursor: pointer;
   color: #fff;
   opacity: 0;
@@ -372,5 +393,79 @@ g.svg__xAxis .tick text {
 
 .tick line {
   stroke: rgba(243, 123, 123, 0.3);
+}
+
+.fixedSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 60%;
+  left: 65%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 60%;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 1px 1px 1px 1px #ccc;
+          box-shadow: 1px 1px 1px 1px #ccc;
+  opacity: 0;
+  padding: 15px 10px;
+  -webkit-transition: 0.5s linear;
+  transition: 0.5s linear;
+}
+
+@media (min-width: 640px) {
+  .fixedSection {
+    left: 75%;
+  }
+}
+
+.fixedSection__text {
+  line-height: 25px;
+  font-size: 17px;
+  font-family: "Kufam", cursive;
+}
+
+.fixedSection__country {
+  padding: 1px 5px;
+  background-color: #f8f3c6;
+  color: #111;
+}
+
+.fixedSection__cases {
+  padding: 1px 5px;
+  background-color: #4e66dd;
+  color: #eee;
+}
+
+.fixedSection__active {
+  padding: 1px 5px;
+  background-color: #338833;
+  color: #eee;
+}
+
+.fixedSection__deaths {
+  padding: 1px 5px;
+  background-color: rgba(17, 17, 17, 0.85);
+  color: #eee;
+}
+
+.fixedSection__critical {
+  padding: 1px 5px;
+  background-color: #aa3333;
+  color: #eee;
+}
+
+.fixedSection__todayD {
+  padding: 1px 5px;
+  background-color: #dd3333;
+  color: #eee;
+}
+
+.fixedSection__todayC {
+  padding: 1px 5px;
+  background-color: #e75e2c;
+  color: #eee;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,8 +1,10 @@
 import React from "react";
 import Chart from "../../containers/Chart/Chart";
 import PropTypes from "prop-types";
+import MainLastSection from "./MainLastSection/MainLastSection";
+import MainFixedSection from "./MainFixedSection/MainFixedSection";
 
-function MainView({ chartStageNumber, dataTop10, dataHistorical }) {
+function MainView({ dataMost, dataHistorical }) {
   return (
     <main className="main">
       <section className="main__chartSection scrollSection introSection">
@@ -15,7 +17,7 @@ function MainView({ chartStageNumber, dataTop10, dataHistorical }) {
       </section>
       <section className="main__chartSection scrollSection">
         <h1 className="main__title">
-          <Chart dataTop10={dataTop10} />
+          <Chart dataMost={dataMost} />
         </h1>
       </section>
       <section className="scrollSection"></section>
@@ -28,15 +30,15 @@ function MainView({ chartStageNumber, dataTop10, dataHistorical }) {
       <section className="scrollSection"></section>
       <section className="scrollSection"></section>
       <section className="scrollSection lastSection">
-        <h1 className="main__title">ANY TEXT HERE</h1>
+        <MainLastSection />
       </section>
+      <MainFixedSection dataMost={dataMost} />
     </main>
   );
 }
 
 MainView.propTypes = {
-  chartStageNumber: PropTypes.number,
-  dataTop10: PropTypes.array,
+  dataMost: PropTypes.array,
 };
 
 export default MainView;

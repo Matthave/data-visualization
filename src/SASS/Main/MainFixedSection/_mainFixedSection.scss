@@ -1,0 +1,66 @@
+.fixedSection {
+  display: flex;
+  position: fixed;
+  top: 60%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: 1px 1px 1px 1px #ccc;
+  opacity: 0;
+  padding: 15px 10px;
+  transition: 0.5s linear;
+
+  @include mq(small) {
+    left: 75%;
+  }
+
+  &__text {
+    line-height: 25px;
+    font-size: 17px;
+    font-family: "Kufam", cursive;
+  }
+}
+
+.fixedSection__country {
+  padding: 1px 5px;
+  background-color: #f8f3c6;
+  color: #111;
+}
+
+.fixedSection__cases {
+  padding: 1px 5px;
+  background-color: #4e66dd;
+  color: #eee;
+}
+
+.fixedSection__active {
+  padding: 1px 5px;
+  background-color: #338833;
+  color: #eee;
+}
+
+.fixedSection__deaths {
+  padding: 1px 5px;
+  background-color: rgba(17, 17, 17, 0.85);
+  color: #eee;
+}
+
+.fixedSection__critical {
+  padding: 1px 5px;
+  background-color: #aa3333;
+  color: #eee;
+}
+
+.fixedSection__todayD {
+  padding: 1px 5px;
+  background-color: #dd3333;
+  color: #eee;
+}
+
+.fixedSection__todayC {
+  padding: 1px 5px;
+  background-color: #e75e2c;
+  color: #eee;
+}

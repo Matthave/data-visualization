@@ -13,13 +13,13 @@ import {
 
 export class Chart extends Component {
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.dataTop10.length !== prevProps.dataTop10.length) {
+    if (this.props.dataMost.length !== prevProps.dataMost.length) {
       this.initForSvg();
     }
   }
 
   initForSvg = () => {
-    const { dataTop10 } = this.props;
+    const { dataMost } = this.props;
     const container = select(".chart__svg");
     const containerWidth = container.attr("width");
     const containerHeight = +container.attr("height");
@@ -36,13 +36,13 @@ export class Chart extends Component {
 
     //Inst if scaleLinear + calculate from 0 do highest value
     const xScale = scaleLinear()
-      .domain([0, max(dataTop10, (d) => d.cases)])
+      .domain([0, max(dataMost, (d) => d.cases)])
       .range([0, innerWidth])
       .nice();
 
     //Inst of scaleBand + calculate from 0 do highest value + padding
     const yScale = scaleBand()
-      .domain(dataTop10.map((d) => d.country))
+      .domain(dataMost.map((d) => d.country))
       .range([0, innerHeight])
       .padding(0.2);
 
@@ -58,7 +58,7 @@ export class Chart extends Component {
     //xAxis
     //Settings to xAxist format + replace
     const xAxistTickFormat = (number) =>
-      format(".1s")(number).replace("k", "K");
+      format(".2s")(number).replace("k", "K");
     const xAxis = axisBottom(xScale)
       .tickFormat(xAxistTickFormat)
       .tickSize(-innerHeight)
@@ -74,7 +74,7 @@ export class Chart extends Component {
 
     //Main group g
     g.selectAll("rect")
-      .data(dataTop10)
+      .data(dataMost)
       .enter()
       .append("rect")
       .attr("class", "svg__rect")
@@ -90,7 +90,7 @@ export class Chart extends Component {
 }
 
 Chart.propTypes = {
-  dataTop10: PropTypes.array,
+  dataMost: PropTypes.array,
 };
 
 export default Chart;

@@ -33,7 +33,7 @@ function HeaderView({ textEleOnPosition, headerEleOnPosition }) {
 
       <div className="header__textWrap">
         <p className={textHide}>
-          Maintain at least 1 metre distance between yourself and others
+          Maintain at least 1 meter distance between yourself and others
         </p>
         <p className={textHide}>Regularly and thoroughly clean your hands</p>
         <p className={textHide}>Avoid going to crowded places</p>

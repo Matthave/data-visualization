@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import MainView from "../../components/Main/MainView";
-import { rectVisibilityFunc } from "../../utils";
+import { rectVisibilityHellOfIfs } from "../../utils";
 
 export class Main extends Component {
   constructor(props) {
@@ -117,13 +117,20 @@ export class Main extends Component {
       this.currentIndexOfSection === 1 ||
       this.currentIndexOfSection === 2
     ) {
+      const fixedSectionEle = document.querySelectorAll(".fixedSection");
+      if (this.currentIndexOfSection == 0 || this.currentIndexOfSection === 1) {
+        fixedSectionEle.forEach((ele) => (ele.style.display = "none"));
+      } else {
+        fixedSectionEle.forEach((ele) => (ele.style.display = "initial"));
+      }
+
       this.sectionElements[this.currentIndexOfSection].scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
     }
 
-    rectVisibilityFunc(this.currentIndexOfSection);
+    rectVisibilityHellOfIfs(this.currentIndexOfSection);
     this.setState({
       chartStageNumber: this.currentIndexOfSection,
     });
@@ -163,13 +170,12 @@ export class Main extends Component {
     data.sort(function (a, b) {
       return b.cases - a.cases;
     });
-    const dataTop10 = data.slice(0, 12);
-    dataTop10.forEach((ele, index) => {
+    const dataMost = data.slice(0, 12);
+    dataMost.forEach((ele, index) => {
       ele.countryInfo._id = index;
     });
-    return (
-      <MainView chartStageNumber={chartStageNumber} dataTop10={dataTop10} />
-    );
+
+    return <MainView chartStageNumber={chartStageNumber} dataMost={dataMost} />;
   }
 }
 
