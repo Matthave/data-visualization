@@ -25,9 +25,7 @@ export const rectVisibilityHellOfIfs = (currentIndexOfSection) => {
   const fixedSec10 = document.getElementById("fixedSection10");
   const fixedSec11 = document.getElementById("fixedSection11");
 
-  const icons = document.querySelectorAll(".main__icon");
-
-  const iconsTitle = document.querySelectorAll(".main__iconTitle");
+  const icons = document.querySelectorAll(".main__advice");
 
   const topActive = "50%";
   const topUnactive = "80%";
@@ -241,15 +239,9 @@ export const rectVisibilityHellOfIfs = (currentIndexOfSection) => {
     icons.forEach((icon) => {
       icon.style.opacity = 1;
     });
-    iconsTitle.forEach((iconTitle) => {
-      iconTitle.style.opacity = 1;
-    });
   } else {
     icons.forEach((icon) => {
       icon.style.opacity = 0;
-    });
-    iconsTitle.forEach((iconTitle) => {
-      iconTitle.style.opacity = 0;
     });
   }
 };

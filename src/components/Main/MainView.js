@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import MainLastSection from "./MainLastSection/MainLastSection";
 import MainFixedSection from "./MainFixedSection/MainFixedSection";
 
-function MainView({ dataMost, dataHistorical }) {
+function MainView({ dataMost, swapAdviceFunc, swapAdviceState }) {
   return (
     <main className="main">
       <section className="main__chartSection scrollSection introSection">
@@ -31,7 +31,10 @@ function MainView({ dataMost, dataHistorical }) {
       <section className="scrollSection"></section>
       <section className="scrollSection"></section>
       <section className="scrollSection lastSection">
-        <MainLastSection />
+        <MainLastSection
+          swapAdviceFunc={swapAdviceFunc}
+          swapAdviceState={swapAdviceState}
+        />
       </section>
       <section className="scrollSection"></section>
       <MainFixedSection dataMost={dataMost} />
@@ -41,6 +44,7 @@ function MainView({ dataMost, dataHistorical }) {
 
 MainView.propTypes = {
   dataMost: PropTypes.array,
+  swapAdviceState: PropTypes.bool,
 };
 
 export default MainView;

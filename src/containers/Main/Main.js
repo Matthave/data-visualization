@@ -22,6 +22,7 @@ export class Main extends Component {
       scrollPause: false,
       chartStageNumber: 0,
       data: [],
+      swapAdviceState: false,
     };
   }
 
@@ -153,8 +154,14 @@ export class Main extends Component {
     return isVisible;
   }
 
+  swapAdviceFunc = () => {
+    this.setState({
+      swapAdviceState: !this.state.swapAdviceState,
+    });
+  };
+
   render() {
-    const { chartStageNumber, data } = this.state;
+    const { chartStageNumber, data, swapAdviceState } = this.state;
     data.sort(function (a, b) {
       return b.cases - a.cases;
     });
@@ -163,7 +170,14 @@ export class Main extends Component {
       ele.countryInfo._id = index;
     });
 
-    return <MainView chartStageNumber={chartStageNumber} dataMost={dataMost} />;
+    return (
+      <MainView
+        chartStageNumber={chartStageNumber}
+        dataMost={dataMost}
+        swapAdviceFunc={this.swapAdviceFunc}
+        swapAdviceState={swapAdviceState}
+      />
+    );
   }
 }
 
